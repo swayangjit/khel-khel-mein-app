@@ -42,7 +42,8 @@ export function translateHttpLoaderFactory(httpClient: HttpClient) {
     { provide: STATUS_BAR_PLUGIN, useValue: StatusBar },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ThemeService,
-    StorageService ],
+    StorageService 
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

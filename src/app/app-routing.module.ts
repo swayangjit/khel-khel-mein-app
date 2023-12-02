@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./pages/onboarding/registration/registration.module').then( m => m.RegistrationPageModule),
+    pathMatch: 'full'
   },
   {
     path: 'otp-submission',
@@ -19,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/onboarding/language-selection/language-selection.module').then( m => m.LanguageSelectionPageModule)
   },
   {
-    path: 'registration',
-    loadChildren: () => import('./pages/onboarding/registration/registration.module').then( m => m.RegistrationPageModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./pages/tabs/home/home.module').then( m => m.HomePageModule)
   },
@@ -30,10 +27,6 @@ const routes: Routes = [
     path: 'my-pitara',
     loadChildren: () => import('./pages/tabs/my-pitara/my-pitara.module').then( m => m.MyPitaraPageModule)
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  }
 ];
 @NgModule({
   imports: [

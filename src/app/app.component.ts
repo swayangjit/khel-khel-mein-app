@@ -11,7 +11,7 @@ import { ThemeService } from './services/theme.service';
 export class AppComponent {
   constructor(
     private readonly platform: Platform,
-    // private readonly translateService: TranslateService,
+    private readonly translateService: TranslateService,
     private readonly themeService: ThemeService,
   ) {
     this.initializeApp().catch()
