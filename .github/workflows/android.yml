@@ -22,7 +22,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
+      run: chmod +x gradlew
       
     - name: Install Node.js
       uses: actions/setup-node@v1
