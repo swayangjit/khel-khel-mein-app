@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StatusBar, StatusBarStyle, Style } from '@capacitor/status-bar';
 import { Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { StorageService } from './services/storage.service';
 import { ThemeService } from './services/theme.service';
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
     private readonly platform: Platform,
     private readonly translateService: TranslateService,
     private readonly themeService: ThemeService,
+    private readonly storageService: StorageService
   ) {
     this.initializeApp().catch()
   }
@@ -21,15 +23,13 @@ export class AppComponent {
   }
 
   public async initializeApp(): Promise<void> {
-    // await Promise.all([this.initializeTranslations(), this.platform.ready()])
-
-    // this.themeService.register()
-
-    // this.themeService.statusBarStyleDark(await this.themeService.isDarkMode())
+    await Promise.all([this.initializeTranslations(), this.platform.ready()])
+    await this.storageService.initialize()
+    this.themeService.register()
   }
 
   private async initializeTranslations(): Promise<void> {
-    // this.translateService.setDefaultLang("en")
+    this.translateService.setDefaultLang("en")
   }
 
 }

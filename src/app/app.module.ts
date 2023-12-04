@@ -14,6 +14,9 @@ import { ThemeService } from './services/theme.service';
 import { StorageService } from './services/storage.service';
 import { StatusBar } from '@capacitor/status-bar';
 import { STATUS_BAR_PLUGIN } from './capacitor-plugins/injection-tokens';
+import { PermissionsService } from './services/permissions.service';
+import { ScannerService } from './services/scanner.service';
+import { Diagnostic } from '@awesome-cordova-plugins/diagnostic/ngx'
 
 export function translateHttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -42,7 +45,10 @@ export function translateHttpLoaderFactory(httpClient: HttpClient) {
     { provide: STATUS_BAR_PLUGIN, useValue: StatusBar },
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ThemeService,
-    StorageService 
+    StorageService,
+    PermissionsService,
+    Diagnostic,
+    ScannerService
   ],
   bootstrap: [AppComponent],
 })

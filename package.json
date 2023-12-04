@@ -9,7 +9,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:cap": "ionic capacitor run android --source-map --target emulator-5554",
+    "postinstall": "jetifier"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,7 @@
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
+    "@awesome-cordova-plugins/diagnostic": "^5.37.1",
     "@capacitor/android": "^5.5.1",
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.5.1",
@@ -32,6 +35,8 @@
     "@ionic/storage-angular": "^4.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "cordova-plugin-qr-scanner": "github:project-sunbird/cordova-plugin-qr-scanner#release-7.0.0_cap",
+    "cordova.plugins.diagnostic": "github:dpa99c/cordova-diagnostic-plugin",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -58,6 +63,7 @@
     "eslint-plugin-prefer-arrow": "1.2.2",
     "jasmine-core": "~5.1.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "jetifier": "^2.0.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
