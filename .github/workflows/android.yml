@@ -63,7 +63,6 @@ jobs:
       run: cd android/app/build/outputs/bundle/release && ls && cd ../../../../../..
 
     - name: Upload APK
-      run: ls
       uses: actions/upload-artifact@v3.1.2
       with:
         name: app-release
