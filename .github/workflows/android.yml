@@ -44,9 +44,6 @@ jobs:
     - name: Copy generated assets from Ionic to Capacitor Android platform
       run: npx cap copy android && npx cap update android
 
-    - name: Echo values
-      run: echo "thou shall error on non-existence ${{ secrets.TEST }}!"
-
     - name: Decode Keystore
       id: decode_keystore
       uses: timheuer/base64-to-file@v1.2
@@ -61,6 +58,9 @@ jobs:
         SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+
+    - name: Copy generated assets from Ionic to Capacitor Android platform
+      run: cd android/app/build/output/bundle/release && ls && cd ../../../../../..
 
     - name: Upload APK
       uses: actions/upload-artifact@v3.1.2
