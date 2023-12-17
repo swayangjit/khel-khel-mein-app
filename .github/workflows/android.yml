@@ -45,7 +45,7 @@ jobs:
       run: npx cap copy android && npx cap update android
 
     - name: Echo values
-      run: echo "thou shall error on non-existence ${secrets.TEST}!"
+      run: echo "thou shall error on non-existence ${{ secrets.TEST }}!"
     - name: Decode Keystore
       id: decode_keystore
       uses: timheuer/base64-to-file@v1.2
