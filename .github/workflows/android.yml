@@ -46,6 +46,7 @@ jobs:
 
     - name: Echo values
       run: echo "thou shall error on non-existence ${{ secrets.TEST }}!"
+
     - name: Decode Keystore
       id: decode_keystore
       uses: timheuer/base64-to-file@v1.2
@@ -55,7 +56,7 @@ jobs:
         encodedString: ${{ secrets.KEYSTORE }}
 
     - name: Build APK
-      run: ./gradlew app:bundleRelease
+      run: cd android && ./gradlew app:bundleRelease
       env:
         SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
