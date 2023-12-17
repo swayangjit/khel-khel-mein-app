@@ -67,4 +67,4 @@ jobs:
       with:
         name: app-release
         path: |
-          ${{ github.workspace }}/packages/app/android/app/build/outputs/bundle/release/*.aab
+          khel-khel-mein-app/khel-khel-mein-app/app/android/app/build/outputs/bundle/release/*.aab
