@@ -60,7 +60,7 @@ jobs:
         SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 
     - name: Copy generated assets from Ionic to Capacitor Android platform
-      run: cd android/app/build/output/bundle/release && ls && cd ../../../../../..
+      run: cd android && ls && cd ..
 
     - name: Upload APK
       uses: actions/upload-artifact@v3.1.2
