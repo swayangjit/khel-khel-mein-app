@@ -66,4 +66,4 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: app-release
-        path: khel-khel-mein-app/android/app/build/outputs/bundle/release/
+        path: ${{ github.workspace }}/android/app/build/outputs/bundle/release/
